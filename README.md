@@ -21,3 +21,36 @@ private void Form1_Load(object sender, EventArgs e)
 
     propertyGrid1.SelectedObject = _imageViewportControl;
 }
+
+private void OnDrawOverlayViewport(object sender, EventArgs e)
+{
+    if (checkBox_drawoverlay_line.Checked)
+    {
+        _imageViewportControl.Drawoverlay_SetColorLine(Color.White);
+        _imageViewportControl.DrawoverlayWorld_DrawLine(0, 0, 10, 10);
+        _imageViewportControl.Drawoverlay_SetColorLine(Color.YellowGreen);
+        _imageViewportControl.DrawoverlayWorld_DrawLine(0, 10, 10, 0);
+
+        _imageViewportControl.Drawoverlay_SetColorLine(Color.YellowGreen);
+        _imageViewportControl.DrawoverlayScreen_DrawLine(0, 0, 30, 30);
+        _imageViewportControl.Drawoverlay_SetColorLine(Color.White);
+        _imageViewportControl.DrawoverlayScreen_DrawLine(0, 30, 30, 0);
+    }
+
+    if (checkBox_text.Checked)
+    {
+        _imageViewportControl.DrawoverlayWorldPosition_DrawText(0, 30, textBox_text.Text, Font, Color.White, Color.Black, (float)1.0);
+    }
+
+    if (checkBox_drawoverlay_rectangle.Checked)
+    {
+        _imageViewportControl.Drawoverlay_SetColorLine(Color.Yellow);
+        _imageViewportControl.DrawoverlayWorld_DrawRectangle(0, 0, 30, 30, 0);
+    }
+
+    if (checkBox_drawoverlay_ellipse.Checked)
+    {
+        _imageViewportControl.Drawoverlay_SetColorLine(Color.LightGreen);
+        _imageViewportControl.DrawoverlayWorld_DrawEllipse(20, 15, 20, 15, 0);
+    }
+}
