@@ -36,6 +36,7 @@
             this.textBox_text = new System.Windows.Forms.TextBox();
             this.checkBox_drawoverlay_rectangle = new System.Windows.Forms.CheckBox();
             this.checkBox_drawoverlay_ellipse = new System.Windows.Forms.CheckBox();
+            this.checkBox_mouse_draw_rect = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -127,11 +128,23 @@
             this.checkBox_drawoverlay_ellipse.UseVisualStyleBackColor = true;
             this.checkBox_drawoverlay_ellipse.CheckedChanged += new System.EventHandler(this.UIChangeStateForImageViwerInvalidate);
             // 
+            // checkBox_mouse_draw_rect
+            // 
+            this.checkBox_mouse_draw_rect.AutoSize = true;
+            this.checkBox_mouse_draw_rect.Location = new System.Drawing.Point(528, 8);
+            this.checkBox_mouse_draw_rect.Name = "checkBox_mouse_draw_rect";
+            this.checkBox_mouse_draw_rect.Size = new System.Drawing.Size(148, 16);
+            this.checkBox_mouse_draw_rect.TabIndex = 7;
+            this.checkBox_mouse_draw_rect.Text = "Mouse drag rectangle";
+            this.checkBox_mouse_draw_rect.UseVisualStyleBackColor = true;
+            this.checkBox_mouse_draw_rect.CheckedChanged += new System.EventHandler(this.checkBox_mouse_draw_rect_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(986, 567);
+            this.Controls.Add(this.checkBox_mouse_draw_rect);
             this.Controls.Add(this.checkBox_drawoverlay_ellipse);
             this.Controls.Add(this.checkBox_drawoverlay_rectangle);
             this.Controls.Add(this.textBox_text);
@@ -160,6 +173,7 @@
         private System.Windows.Forms.TextBox textBox_text;
         private System.Windows.Forms.CheckBox checkBox_drawoverlay_rectangle;
         private System.Windows.Forms.CheckBox checkBox_drawoverlay_ellipse;
+        private System.Windows.Forms.CheckBox checkBox_mouse_draw_rect;
     }
 }
 
