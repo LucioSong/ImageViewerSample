@@ -116,7 +116,6 @@ namespace ImageViewerSample
 
         private void _imageViewportControl_ViewportMouseMove(object sender, MouseEventArgs e)
         {
-            //Console.WriteLine($"MouseMove: {_imageViewportControl.WorldPointMouse_X}, {_imageViewportControl.WorldPointMouse_Y}");
             _ptdMouseMove = new PointD(_imageViewportControl.WorldPointMouse_X, _imageViewportControl.WorldPointMouse_Y);
             if (checkBox_mouse_draw_rect.Checked)
             {
@@ -136,12 +135,10 @@ namespace ImageViewerSample
             {
                 _mouseState = MouseState.None;
             }
-            //Console.WriteLine($"Move Mouse state: {_mouseState}");
         }
 
         private void _imageViewportControl_ViewportMouseUp(object sender, MouseEventArgs e)
         {
-            //Console.WriteLine($"MouseUp: {_imageViewportControl.WorldPointMouse_X}, {_imageViewportControl.WorldPointMouse_Y}");            
             if (checkBox_mouse_draw_rect.Checked)
             {
                 if (e.Button == MouseButtons.Left)
@@ -155,12 +152,10 @@ namespace ImageViewerSample
             {
                 _mouseState = MouseState.None;
             }
-            //Console.WriteLine($"Up Mouse state: {_mouseState}");
         }
 
         private void _imageViewportControl_ViewportMouseDown(object sender, MouseEventArgs e)
         {
-            //Console.WriteLine($"MouseDown: {_imageViewportControl.WorldPointMouse_X}, {_imageViewportControl.WorldPointMouse_Y}");            
             if (checkBox_mouse_draw_rect.Checked)
             {
                 if (e.Button == MouseButtons.Left)
@@ -174,7 +169,6 @@ namespace ImageViewerSample
             {
                 _mouseState = MouseState.None;
             }
-            //Console.WriteLine($"Down Mouse state: {_mouseState}");
         }
 
         private void UIChangeStateForImageViwerInvalidate(object sender, EventArgs e)
