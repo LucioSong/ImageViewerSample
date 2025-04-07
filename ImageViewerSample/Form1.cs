@@ -83,6 +83,7 @@ namespace ImageViewerSample
             {
                 if (_bIsDrag)
                 {
+                    // Draging...
                     _imageViewportControl.Drawoverlay_SetColorLine(Color.White);
                     double lowX = Math.Min(_ptdMouseDown.X, _ptdMouseMove.X);
                     double lowY = Math.Min(_ptdMouseDown.Y, _ptdMouseMove.Y);
@@ -92,6 +93,7 @@ namespace ImageViewerSample
                 }
                 else
                 {
+                    // None
                     _imageViewportControl.Drawoverlay_SetColorLine(Color.White);
                     double lowX = Math.Min(_ptdMouseDown.X, _ptdMouseUp.X);
                     double lowY = Math.Min(_ptdMouseDown.Y, _ptdMouseUp.Y);
