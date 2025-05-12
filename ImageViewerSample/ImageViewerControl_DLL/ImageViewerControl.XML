@@ -1,0 +1,340 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ImageViewerControl</name>
+    </assembly>
+    <members>
+        <member name="T:ImageViewerControl.ImageViewport">
+            <summary>
+            Image Viewport
+            </summary>
+        </member>
+        <member name="T:ImageViewerControl.ImageViewport.toolbarPositionType">
+            <summary>
+            View port의 Tool bar 위치
+            </summary>
+        </member>
+        <member name="F:ImageViewerControl.ImageViewport.toolbarPositionType.HorizontalTopLeft">
+            <summary>
+            상단 좌측 수평 정렬 (왼쪽 위)
+            </summary>
+        </member>
+        <member name="F:ImageViewerControl.ImageViewport.toolbarPositionType.HorizontalTopCenter">
+            <summary>
+            상단 중앙 수평 정렬 (가운데 위)
+            </summary>
+        </member>
+        <member name="F:ImageViewerControl.ImageViewport.toolbarPositionType.HorizontalTopRight">
+            <summary>
+            상단 우측 수평 정렬 (오른쪽 위)
+            </summary>
+        </member>
+        <member name="F:ImageViewerControl.ImageViewport.toolbarPositionType.VerticalTopRight">
+            <summary>
+            우측 상단 수직 정렬 (오른쪽 위)
+            </summary>
+        </member>
+        <member name="F:ImageViewerControl.ImageViewport.toolbarPositionType.VerticalMiddleRight">
+            <summary>
+            우측 중앙 수직 정렬 (오른쪽 가운데)
+            </summary>
+        </member>
+        <member name="F:ImageViewerControl.ImageViewport.toolbarPositionType.VerticalBottomRight">
+            <summary>
+            우측 하단 수직 정렬 (오른쪽 아래)
+            </summary>
+        </member>
+        <member name="F:ImageViewerControl.ImageViewport.toolbarPositionType.HorizontalBottomRight">
+            <summary>
+            하단 우측 수평 정렬 (아래 오른쪽)
+            </summary>
+        </member>
+        <member name="F:ImageViewerControl.ImageViewport.toolbarPositionType.HorizontalBottomCenter">
+            <summary>
+            하단 중앙 수평 정렬 (아래 가운데)
+            </summary>
+        </member>
+        <member name="F:ImageViewerControl.ImageViewport.toolbarPositionType.HorizontalBottomLeft">
+            <summary>
+            하단 좌측 수평 정렬 (아래 왼쪽)
+            </summary>
+        </member>
+        <member name="F:ImageViewerControl.ImageViewport.toolbarPositionType.VerticalBottomLeft">
+            <summary>
+            좌측 하단 수직 정렬 (왼쪽 아래)
+            </summary>
+        </member>
+        <member name="F:ImageViewerControl.ImageViewport.toolbarPositionType.VerticalMiddleLeft">
+            <summary>
+            좌측 중앙 수직 정렬 (왼쪽 가운데)
+            </summary>
+        </member>
+        <member name="F:ImageViewerControl.ImageViewport.toolbarPositionType.VerticalTopLeft">
+            <summary>
+            좌측 상단 수직 정렬 (왼쪽 위)
+            </summary>
+        </member>
+        <member name="F:ImageViewerControl.ImageViewport.DrawOverlayViewportEvent">
+            <summary>
+            뷰포트 위에 오버레이를 그릴 때 발생하는 이벤트입니다.
+            </summary>
+            <remarks>
+            사용자 지정 그래픽 요소(예: 마커, 커서 등)를 뷰포트 위에 추가적으로 그릴 때 사용됩니다.
+            이 이벤트에 구독하여 GDI+를 이용한 추가 렌더링 작업을 수행할 수 있습니다.
+            </remarks>
+        </member>
+        <member name="E:ImageViewerControl.ImageViewport.ViewportMouseMove">
+            <summary>
+            뷰포트에서 마우스를 이동할 때 발생하는 이벤트입니다.
+            </summary>
+            <remarks>
+            마우스 위치에 따라 상태 정보를 표시하거나 툴팁을 갱신하는 등의 기능에 사용할 수 있습니다.
+            </remarks>
+        </member>
+        <member name="E:ImageViewerControl.ImageViewport.ViewportMouseDown">
+            <summary>
+            뷰포트에서 마우스 버튼을 누를 때 발생하는 이벤트입니다.
+            </summary>
+            <remarks>
+            선택, 드래그 시작 등의 사용자 인터랙션 처리를 위해 사용됩니다.
+            </remarks>
+        </member>
+        <member name="E:ImageViewerControl.ImageViewport.ViewportMouseUp">
+            <summary>
+            뷰포트에서 마우스 버튼을 놓을 때 발생하는 이벤트입니다.
+            </summary>
+            <remarks>
+            드래그 종료, 클릭 판정 등의 기능 구현에 사용됩니다.
+            </remarks>
+        </member>
+        <member name="P:ImageViewerControl.ImageViewport.ImageRealOffsetX">
+            <summary>
+            이미지의 실제 X 오프셋 좌표입니다.
+            </summary>
+            <value>Viewport 상의 이미지 좌표에서의 오프셋 X 값</value>
+        </member>
+        <member name="P:ImageViewerControl.ImageViewport.ImageRealOffsetY">
+            <summary>
+            이미지의 실제 Y 오프셋 좌표입니다.
+            </summary>
+            <value>Viewport 상의 이미지 좌표에서의 오프셋 Y 값</value>
+        </member>
+        <member name="P:ImageViewerControl.ImageViewport.ImageRealWidth">
+            <summary>
+            이미지의 실제 너비를 설정합니다.
+            </summary>
+            <value>실제 크기(mm 또는 사용자 단위) 기준의 너비</value>
+        </member>
+        <member name="P:ImageViewerControl.ImageViewport.ImageRealHeight">
+            <summary>
+            이미지의 실제 높이를 설정합니다.
+            </summary>
+            <value>실제 크기(mm 또는 사용자 단위) 기준의 높이</value>
+        </member>
+        <member name="P:ImageViewerControl.ImageViewport.UpdateImageOnDialog">
+            <summary>
+            파일 다이얼로그를 통해 이미지를 선택하여 갱신합니다.
+            </summary>
+            <remarks>디버깅 또는 테스트용으로 사용합니다.</remarks>
+        </member>
+        <member name="P:ImageViewerControl.ImageViewport.WorldPointMouse_X">
+            <summary>
+            마우스의 월드 좌표 X 값을 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:ImageViewerControl.ImageViewport.WorldPointMouse_Y">
+            <summary>
+            마우스의 월드 좌표 Y 값을 가져옵니다.
+            </summary>
+        </member>
+        <member name="P:ImageViewerControl.ImageViewport.ToolbarPosition">
+            <summary>
+            툴바의 위치를 설정하거나 가져옵니다.
+            </summary>
+            <remarks>
+            Viewport 상단에 표시되는 도구 모음의 위치를 설정합니다.
+            </remarks>
+        </member>
+        <member name="P:ImageViewerControl.ImageViewport.ShowToolbar_ZoomWindow">
+            <summary>
+            ZoomWindow 버튼의 표시 여부를 설정하거나 가져옵니다.
+            </summary>
+            <remarks>
+            도구 모음에서 확대 영역(ZoonWindow) 버튼을 표시할지 여부를 지정합니다.
+            </remarks>
+        </member>
+        <member name="P:ImageViewerControl.ImageViewport.ShowToolbar_Zoom">
+            <summary>
+            Zoom 버튼의 표시 여부를 설정하거나 가져옵니다.
+            </summary>
+            <remarks>
+            도구 모음에서 Zoom 버튼을 표시할지 여부를 지정합니다.
+            </remarks>
+        </member>
+        <member name="P:ImageViewerControl.ImageViewport.ShowToolbar_Pan">
+            <summary>
+            Pan 버튼의 표시 여부를 설정하거나 가져옵니다.
+            </summary>
+            <remarks>
+            도구 모음에서 Pan(이동) 버튼을 표시할지 여부를 지정합니다.
+            </remarks>
+        </member>
+        <member name="P:ImageViewerControl.ImageViewport.ShowToolbar_ZoomFit">
+            <summary>
+            ZoomFit 버튼의 표시 여부를 설정하거나 가져옵니다.
+            </summary>
+            <remarks>
+            도구 모음에서 ZoomFit(전체 보기) 버튼을 표시할지 여부를 지정합니다.
+            </remarks>
+        </member>
+        <member name="P:ImageViewerControl.ImageViewport.RulerHorizontal">
+            <summary>
+            수평 자(Horizontal Ruler)의 표시 여부를 설정하거나 가져옵니다.
+            </summary>
+            <remarks>
+            Viewport 상단에 수평 눈금자를 표시할지 여부를 지정합니다.
+            </remarks>
+        </member>
+        <member name="P:ImageViewerControl.ImageViewport.RulerVertical">
+            <summary>
+            수직 자(Vertical Ruler)의 표시 여부를 설정하거나 가져옵니다.
+            </summary>
+            <remarks>
+            Viewport 좌측에 수직 눈금자를 표시할지 여부를 지정합니다.
+            </remarks>
+        </member>
+        <member name="M:ImageViewerControl.ImageViewport.UpdateImage(System.Drawing.Image)">
+            <summary>
+            이미지 뷰포트에 새로운 이미지를 설정하고 갱신합니다.
+            </summary>
+            <param name="img">새로 설정할 이미지</param>
+            <returns>성공 시 true, 실패 시 false</returns>
+        </member>
+        <member name="M:ImageViewerControl.ImageViewport.#ctor">
+            <summary>
+            ImageViewport 기본 생성자입니다.
+            </summary>
+        </member>
+        <member name="M:ImageViewerControl.ImageViewport.#ctor(System.Drawing.Color)">
+            <summary>
+            배경색을 지정하여 ImageViewport를 초기화합니다.
+            </summary>
+            <param name="backgroundColor">뷰포트 배경 색상</param>
+        </member>
+        <member name="M:ImageViewerControl.ImageViewport.Invalidate_ImageViewport">
+            <summary>
+            뷰포트를 다시 그립니다.
+            </summary>
+        </member>
+        <member name="M:ImageViewerControl.ImageViewport.Drawoverlay_SetColorLine(System.Drawing.Color)">
+            <summary>
+            오버레이 선의 색상을 설정합니다.
+            </summary>
+            <param name="color">선 색상</param>
+        </member>
+        <member name="M:ImageViewerControl.ImageViewport.Drawoverlay_SetLineSize(System.Single)">
+            <summary>
+            오버레이 선의 두께를 설정합니다.
+            </summary>
+            <param name="size">선의 두께</param>
+        </member>
+        <member name="M:ImageViewerControl.ImageViewport.DrawoverlayWorld_DrawLine(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            월드 좌표 기준으로 선을 그립니다.
+            </summary>
+            <param name="startX">시작 X 좌표</param>
+            <param name="startY">시작 Y 좌표</param>
+            <param name="endX">종료 X 좌표</param>
+            <param name="endY">종료 Y 좌표</param>
+        </member>
+        <member name="M:ImageViewerControl.ImageViewport.DrawoverlayScreen_DrawLine(System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            화면 좌표 기준으로 선을 그립니다.
+            </summary>
+            <param name="startX">시작 X 좌표</param>
+            <param name="startY">시작 Y 좌표</param>
+            <param name="endX">종료 X 좌표</param>
+            <param name="endY">종료 Y 좌표</param>
+        </member>
+        <member name="M:ImageViewerControl.ImageViewport.DrawoverlayWorld_DrawRectangle(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            월드 좌표 기준으로 사각형을 그립니다.
+            </summary>
+            <param name="posX">X 좌표</param>
+            <param name="posY">Y 좌표</param>
+            <param name="width">너비</param>
+            <param name="height">높이</param>
+            <param name="angle">회전 각도 (도 단위)</param>
+        </member>
+        <member name="M:ImageViewerControl.ImageViewport.DrawoverlayScreen_DrawRectangle(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            화면 좌표 기준으로 사각형을 그립니다.
+            </summary>
+            <param name="posX">X 좌표</param>
+            <param name="posY">Y 좌표</param>
+            <param name="width">너비</param>
+            <param name="height">높이</param>
+            <param name="angle">회전 각도 (도 단위)</param>
+        </member>
+        <member name="M:ImageViewerControl.ImageViewport.DrawoverlayWorld_DrawEllipse(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            월드 좌표 기준으로 타원을 그립니다.
+            </summary>
+            <param name="centerX">중심 X 좌표</param>
+            <param name="centerY">중심 Y 좌표</param>
+            <param name="longRadius">장반경</param>
+            <param name="shortRadius">단반경</param>
+            <param name="angle">회전 각도 (도 단위)</param>
+        </member>
+        <member name="M:ImageViewerControl.ImageViewport.DrawoverlayScreen_DrawEllipse(System.Double,System.Double,System.Double,System.Double,System.Double)">
+            <summary>
+            화면 좌표 기준으로 타원을 그립니다.
+            </summary>
+            <param name="centerX">중심 X 좌표</param>
+            <param name="centerY">중심 Y 좌표</param>
+            <param name="longRadius">장반경</param>
+            <param name="shortRadius">단반경</param>
+            <param name="angle">회전 각도 (도 단위)</param>
+        </member>
+        <member name="M:ImageViewerControl.ImageViewport.DrawoverlayWorldPosition_DrawText(System.Double,System.Double,System.String,System.Drawing.Font,System.Drawing.Color,System.Drawing.Color,System.Single)">
+            <summary>
+            월드 좌표 기준으로 화면에 텍스트를 출력합니다.
+            </summary>
+            <param name="x">X 좌표</param>
+            <param name="y">Y 좌표</param>
+            <param name="text">표시할 텍스트</param>
+            <param name="font">폰트</param>
+            <param name="textColor">텍스트 색상</param>
+            <param name="outlineColor">외곽선 색상</param>
+            <param name="outlineThickness">외곽선 두께</param>
+        </member>
+        <member name="M:ImageViewerControl.ImageViewport.ZoomFit">
+            <summary>
+            현재 뷰포트 화면에 맞도록 자동으로 확대/축소합니다.
+            </summary>
+        </member>
+        <member name="M:ImageViewerControl.ImageViewport.ZoomFit(System.Int32)">
+            <summary>
+            현재 뷰포트 화면에 맞도록 자동으로 확대/축소하며, 여백을 설정할 수 있습니다.
+            </summary>
+            <param name="margin">객체 주위에 추가될 여백의 픽셀 수</param>
+        </member>
+        <member name="F:ImageViewerControl.ImageViewport.components">
+            <summary>
+            필수 디자이너 변수입니다.
+            </summary>
+        </member>
+        <member name="M:ImageViewerControl.ImageViewport.Dispose(System.Boolean)">
+            <summary>
+            사용 중인 모든 리소스를 정리합니다.
+            </summary>
+            <param name="disposing">관리되는 리소스를 삭제해야 하면 true이고, 그렇지 않으면 false입니다.</param>
+        </member>
+        <member name="M:ImageViewerControl.ImageViewport.InitializeComponent">
+            <summary>
+            디자이너 지원에 필요한 메서드입니다. 
+            이 메서드의 내용을 코드 편집기로 수정하지 마세요.
+            </summary>
+        </member>
+    </members>
+</doc>

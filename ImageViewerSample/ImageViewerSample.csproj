@@ -89,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ImageViewerControl_DLL\ImageViewerControl.dll" />
+    <Content Include="ImageViewerControl_DLL\ImageViewerControl.XML" />
     <Content Include="ImageViewerControl_DLL\Runtime\CopyModules.dll" />
     <Content Include="ImageViewerControl_DLL\Runtime\devDept.Eyeshot.Control.x86.v9.dll" />
     <Content Include="ImageViewerControl_DLL\Runtime\sisl.dll" />
