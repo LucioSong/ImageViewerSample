@@ -37,6 +37,7 @@
             this.checkBox_drawoverlay_rectangle = new System.Windows.Forms.CheckBox();
             this.checkBox_drawoverlay_ellipse = new System.Windows.Forms.CheckBox();
             this.checkBox_mouse_draw_rect = new System.Windows.Forms.CheckBox();
+            this.button_opencv_control = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -54,8 +55,8 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.propertyGrid1);
-            this.splitContainer1.Size = new System.Drawing.Size(986, 526);
-            this.splitContainer1.SplitterDistance = 328;
+            this.splitContainer1.Size = new System.Drawing.Size(984, 520);
+            this.splitContainer1.SplitterDistance = 327;
             this.splitContainer1.TabIndex = 0;
             // 
             // propertyGrid1
@@ -63,7 +64,7 @@
             this.propertyGrid1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.propertyGrid1.Location = new System.Drawing.Point(0, 0);
             this.propertyGrid1.Name = "propertyGrid1";
-            this.propertyGrid1.Size = new System.Drawing.Size(326, 524);
+            this.propertyGrid1.Size = new System.Drawing.Size(325, 518);
             this.propertyGrid1.TabIndex = 0;
             // 
             // label1
@@ -89,7 +90,7 @@
             // checkBox_text
             // 
             this.checkBox_text.AutoSize = true;
-            this.checkBox_text.Location = new System.Drawing.Point(213, 9);
+            this.checkBox_text.Location = new System.Drawing.Point(213, 8);
             this.checkBox_text.Name = "checkBox_text";
             this.checkBox_text.Size = new System.Drawing.Size(49, 16);
             this.checkBox_text.TabIndex = 3;
@@ -99,7 +100,7 @@
             // 
             // textBox_text
             // 
-            this.textBox_text.Location = new System.Drawing.Point(268, 9);
+            this.textBox_text.Location = new System.Drawing.Point(268, 6);
             this.textBox_text.Name = "textBox_text";
             this.textBox_text.Size = new System.Drawing.Size(100, 21);
             this.textBox_text.TabIndex = 4;
@@ -109,7 +110,7 @@
             // checkBox_drawoverlay_rectangle
             // 
             this.checkBox_drawoverlay_rectangle.AutoSize = true;
-            this.checkBox_drawoverlay_rectangle.Location = new System.Drawing.Point(374, 9);
+            this.checkBox_drawoverlay_rectangle.Location = new System.Drawing.Point(374, 8);
             this.checkBox_drawoverlay_rectangle.Name = "checkBox_drawoverlay_rectangle";
             this.checkBox_drawoverlay_rectangle.Size = new System.Drawing.Size(80, 16);
             this.checkBox_drawoverlay_rectangle.TabIndex = 5;
@@ -139,11 +140,23 @@
             this.checkBox_mouse_draw_rect.UseVisualStyleBackColor = true;
             this.checkBox_mouse_draw_rect.CheckedChanged += new System.EventHandler(this.checkBox_mouse_draw_rect_CheckedChanged);
             // 
+            // button_opencv_control
+            // 
+            this.button_opencv_control.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_opencv_control.Location = new System.Drawing.Point(838, 12);
+            this.button_opencv_control.Name = "button_opencv_control";
+            this.button_opencv_control.Size = new System.Drawing.Size(134, 23);
+            this.button_opencv_control.TabIndex = 8;
+            this.button_opencv_control.Text = "Open CV control";
+            this.button_opencv_control.UseVisualStyleBackColor = true;
+            this.button_opencv_control.Click += new System.EventHandler(this.button_opencv_control_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(986, 567);
+            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.Controls.Add(this.button_opencv_control);
             this.Controls.Add(this.checkBox_mouse_draw_rect);
             this.Controls.Add(this.checkBox_drawoverlay_ellipse);
             this.Controls.Add(this.checkBox_drawoverlay_rectangle);
@@ -153,6 +166,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form1";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
@@ -174,6 +189,7 @@
         private System.Windows.Forms.CheckBox checkBox_drawoverlay_rectangle;
         private System.Windows.Forms.CheckBox checkBox_drawoverlay_ellipse;
         private System.Windows.Forms.CheckBox checkBox_mouse_draw_rect;
+        private System.Windows.Forms.Button button_opencv_control;
     }
 }
 

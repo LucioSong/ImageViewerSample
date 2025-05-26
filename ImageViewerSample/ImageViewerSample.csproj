@@ -56,10 +56,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOpenCVControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOpenCVControl.Designer.cs">
+      <DependentUpon>FormOpenCVControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOpenCVControl.resx">
+      <DependentUpon>FormOpenCVControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -107,6 +116,17 @@
     <Content Include="ImageViewerControl_DLL\Runtime\TD_Root_4.02_11.dll" />
     <Content Include="ImageViewerControl_DLL\Runtime\TD_SpatialIndex_4.02_11.dll" />
     <Content Include="TestImage\Lenna_%28test_image%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="OpenCvSharp4">
+      <Version>4.11.0.20250507</Version>
+    </PackageReference>
+    <PackageReference Include="OpenCvSharp4.Extensions">
+      <Version>4.11.0.20250507</Version>
+    </PackageReference>
+    <PackageReference Include="OpenCvSharp4.runtime.win">
+      <Version>4.11.0.20250507</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

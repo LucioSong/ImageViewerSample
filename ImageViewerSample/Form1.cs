@@ -1,12 +1,6 @@
 ﻿using ImageViewerControl;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ImageViewerSample
@@ -39,6 +33,9 @@ namespace ImageViewerSample
         PointD _ptdMouseUp = new PointD(0, 0);
         PointD _ptdMouseMove = new PointD(0, 0);
         bool _bIsDrag = false;
+
+
+        FormOpenCVControl _formOpenCVControl = null;
 
         public Form1()
         {
@@ -114,6 +111,16 @@ namespace ImageViewerSample
             splitContainer1.Panel2.Controls.Add(_imageViewportControl);
 
             propertyGrid1.SelectedObject = _imageViewportControl;
+
+
+            _formOpenCVControl = new FormOpenCVControl();
+            _formOpenCVControl.CapturedFrame += _formOpenCVControl_CapturedFrame;
+        }
+
+        private void _formOpenCVControl_CapturedFrame(object sender, Bitmap frame)
+        {
+            _imageViewportControl.UpdateImage(frame);
+            _imageViewportControl.Invalidate_ImageViewport();
         }
 
         private void _imageViewportControl_ViewportMouseMove(object sender, MouseEventArgs e)
@@ -181,6 +188,13 @@ namespace ImageViewerSample
         private void checkBox_mouse_draw_rect_CheckedChanged(object sender, EventArgs e)
         {
             _imageViewportControl.Invalidate_ImageViewport();
+        }
+
+        private void button_opencv_control_Click(object sender, EventArgs e)
+        {
+            _formOpenCVControl.Show();
+            _formOpenCVControl.Focus();
+            _formOpenCVControl.Location = new Point(this.Location.X + this.Width, this.Location.Y);            
         }
     }
 }
